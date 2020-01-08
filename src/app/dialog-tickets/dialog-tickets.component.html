@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Tickets for Order #450</h1>
+<div mat-dialog-content>
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="load">
+      <mat-header-cell *matHeaderCellDef> load </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.load}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="truck">
+      <mat-header-cell *matHeaderCellDef> truck </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.truck}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef> status </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="time">
+      <mat-header-cell *matHeaderCellDef> time </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.time}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="ticket">
+      <mat-header-cell *matHeaderCellDef> ticket </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.ticket}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="delivered">
+      <mat-header-cell *matHeaderCellDef> delivered </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.delivered}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close cdkFocusInitial>Close</button>
+</div>
